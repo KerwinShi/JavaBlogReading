@@ -23,7 +23,20 @@ POST请求
 
 GET请求  
 GET请求中不可以使用@RequestBody  
-@RequestParam --> 在url中的?后面添加参数
+@RequestParam --> 在url中的?后面添加参数  
+
+
+@PathVariable
+专门用户获取请求url中的参数
+```java
+//@PathVariable可以用来映射URL中的占位符到目标方法的参数中
+@RequestMapping("/testPathVariable/{id}")
+public String testPathVariable(@PathVariable("id") Integer id)
+{
+    System.out.println("testPathVariable:"+id);
+    return SUCCESS;
+}
+```
 
 
 
